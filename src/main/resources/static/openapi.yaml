@@ -1,0 +1,168 @@
+#openapi: 3.0.1
+#info:
+#  title: "HOTEL API"
+#  description: "APIs for Hotel Management System"
+#  version: "1.0.0"
+#paths:
+#  /api/hotels/create:
+#    post:
+#      summary: "Create a new hotel"
+#      description: "This endpoint adds a new hotel to the database."
+#      requestBody:
+#        required: true
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/CreateHotelRequest'
+#      responses:
+#        '200':
+#          description: "Hotel created successfully."
+#  /api/hotels/create/multiple:
+#    post:
+#      summary: "Create multiple new hotels"
+#      description: "This endpoint adds multiple new hotels to the database."
+#      requestBody:
+#        required: true
+#        content:
+#          application/json:
+#            schema:
+#              type: array
+#              items:
+#                $ref: '#/components/schemas/CreateHotelRequest'
+#      responses:
+#        '200':
+#          description: "Hotels created successfully."
+#  /api/hotels/find:
+#    get:
+#      summary: "Retrieve all hotels"
+#      description: "This endpoint retrieves all hotels stored in the database."
+#      responses:
+#        '200':
+#          description: "List of all hotels."
+#          content:
+#            application/json:
+#              schema:
+#                type: array
+#                items:
+#                  $ref: '#/components/schemas/ViewHotelRequest'
+#  /api/hotels/find/{id}:
+#    get:
+#      summary: "Retrieve hotel by ID"
+#      description: "This endpoint fetches a hotel from the database based on its unique identifier."
+#      parameters:
+#        - name: id
+#          in: path
+#          required: true
+#          schema:
+#            type: integer
+#      responses:
+#        '200':
+#          description: "Hotel details."
+#          content:
+#            application/json:
+#              schema:
+#                $ref: '#/components/schemas/ViewOneHotelRequest'
+#        '404':
+#          description: "Hotel not found."
+#  /api/hotels/search:
+#    get:
+#      summary: "Search for hotels by location"
+#      description: "This endpoint find hotels based on the specified location parameter"
+#      parameters:
+#        - name: location
+#          in: query
+#          required: true
+#          schema:
+#            type: string
+#      responses:
+#        '200':
+#          description: "List of hotels in the specified location."
+#          content:
+#            application/json:
+#              schema:
+#                type: array
+#                items:
+#                  $ref: '#/components/schemas/Hotel'
+#  /api/hotels/update/{id}:
+#    patch:
+#      summary: "Update hotel by ID"
+#      description: "This endpoint updates a hotel from the database based on its unique identifier."
+#      parameters:
+#        - name: id
+#          in: path
+#          required: true
+#          schema:
+#            type: integer
+#      requestBody:
+#        required: true
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '#/components/schemas/Hotel'
+#      responses:
+#        '200':
+#          description: "Updated hotel details."
+#          content:
+#            application/json:
+#              schema:
+#                $ref: '#/components/schemas/Hotel'
+#  /api/hotels/delete/{id}:
+#    delete:
+#      summary: "Delete hotel by ID"
+#      description: "This endpoint deletes a hotel from the database based on its unique identifier."
+#      parameters:
+#        - name: id
+#          in: path
+#          required: true
+#          schema:
+#            type: integer
+#      responses:
+#        '200':
+#          description: "Hotel deleted successfully."
+#  /api/hotels/delete/all:
+#    delete:
+#      summary: "Delete all hotels"
+#      description: "This endpoint deletes all hotels from the database."
+#      responses:
+#        '200':
+#          description: "All hotels deleted successfully."
+#  /api/hotels/search/el:
+#    get:
+#      summary: "Search Hotel using Elastic Search"
+#      description: "This endpoint searches hotels using elastic search"
+#      parameters:
+#        - name: keyword
+#          in: query
+#          required: true
+#          schema:
+#            type: string
+#      responses:
+#        '200':
+#          description: "List of hotels matching the keyword."
+#          content:
+#            application/json:
+#              schema:
+#                type: array
+#                items:
+#                  $ref: '#/components/schemas/HotelModel'
+#components:
+#  schemas:
+#    CreateHotelRequest:
+#      type: object
+#      properties:
+#    ViewHotelRequest:
+#      type: object
+#      properties:
+#      # Define properties for ViewHotelRequest here
+#    ViewOneHotelRequest:
+#      type: object
+#      properties:
+#      # Define properties for ViewOneHotelRequest here
+#    Hotel:
+#      type: object
+#      properties:
+#      # Define properties for Hotel here
+#    HotelModel:
+#      type: object
+#      properties:
+#      # Define properties for HotelModel here
