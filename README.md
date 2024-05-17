@@ -1,6 +1,6 @@
 # Hotel Management API
 
-This API allows you to manage hotel information including creating, reading, updating, and deleting hotel data.
+This API allows you to manage hotel information, including creating, reading, updating, and deleting hotel data.
 
 ## Getting Started
 
@@ -10,106 +10,133 @@ To start using the API, navigate to the Swagger UI by opening the following URL 
 
 ## Endpoints
 
+### Create a New Hotel
+**POST /api/hotels/create**
+
+Creates a new hotel record.
+
+- **Request Body:**
+  ```json
+  {
+      "hotelName": "Example Hotel",
+      "location": "Example Location",
+      "contact": "+1234567890",
+      "numberOfRooms": 100,
+      "rates": 5000.00,
+      "rating": 4.0,
+      "image": "https://example.com/hotel.jpg"
+  }
+  ```
+- **Response:**
+  - Status: `201 Created`
+  - Body: Created hotel details.
+
 ### Create Multiple Hotels
+**POST /api/hotels/create/multiple**
 
-To create multiple hotel records, use the `POST /api/hotels/create/multiple` endpoint. You can test this endpoint using the Swagger UI. 
+Creates multiple hotel records.
 
-Here is an example payload to create multiple hotel entries:
+- **Request Body:**
+  ```json
+  [
+      {
+          "hotelName": "Hotel Name",
+          "location": "Hotel Location",
+          "contact": "Hotel Contact",
+          "numberOfRooms": 100,
+          "rates": 5000.00,
+          "rating": 4.0,
+          "image": "https://example.com/hotel.jpg"
+      },
+      ...
+  ]
+  ```
+- **Response:**
+  - Status: `201 Created`
+  - Body: List of created hotel details.
 
-```json
-[
-    {
-        "hotelName": "Kathmandu Guest House",
-        "location": "Thamel, Kathmandu",
-        "contact": "+977 1-4700632",
-        "numberOfRooms": 145,
-        "rates": 3500.00,
-        "rating": 4.2,
-        "image": "https://example.com/kathmandu_guest_house.jpg"
-    },
-    {
-        "hotelName": "Hotel Shanker",
-        "location": "Lazimpat, Kathmandu",
-        "contact": "+977 1-4410151",
-        "numberOfRooms": 94,
-        "rates": 7500.00,
-        "rating": 4.5,
-        "image": "https://example.com/hotel_shanker.jpg"
-    },
-    {
-        "hotelName": "Hotel Himalaya",
-        "location": "Kumaripati, Lalitpur",
-        "contact": "+977 1-5523900",
-        "numberOfRooms": 125,
-        "rates": 6000.00,
-        "rating": 4.3,
-        "image": "https://example.com/hotel_himalaya.jpg"
-    },
-    {
-        "hotelName": "Hyatt Regency Kathmandu",
-        "location": "Taragaon, Kathmandu",
-        "contact": "+977 1-5171234",
-        "numberOfRooms": 280,
-        "rates": 15000.00,
-        "rating": 4.6,
-        "image": "https://example.com/hyatt_regency.jpg"
-    },
-    {
-        "hotelName": "Hotel Yak & Yeti",
-        "location": "Durbar Marg, Kathmandu",
-        "contact": "+977 1-4248999",
-        "numberOfRooms": 270,
-        "rates": 12000.00,
-        "rating": 4.4,
-        "image": "https://example.com/hotel_yak_yeti.jpg"
-    },
-    {
-        "hotelName": "Dwarika's Hotel",
-        "location": "Battisputali, Kathmandu",
-        "contact": "+977 1-4479488",
-        "numberOfRooms": 86,
-        "rates": 22000.00,
-        "rating": 4.8,
-        "image": "https://example.com/dwarikas_hotel.jpg"
-    },
-    {
-        "hotelName": "Radisson Hotel Kathmandu",
-        "location": "Lazimpat, Kathmandu",
-        "contact": "+977 1-4411818",
-        "numberOfRooms": 260,
-        "rates": 10000.00,
-        "rating": 4.5,
-        "image": "https://example.com/radisson_hotel.jpg"
-    },
-    {
-        "hotelName": "Hotel Everest",
-        "location": "New Baneshwor, Kathmandu",
-        "contact": "+977 1-4780100",
-        "numberOfRooms": 160,
-        "rates": 9000.00,
-        "rating": 4.3,
-        "image": "https://example.com/hotel_everest.jpg"
-    },
-    {
-        "hotelName": "Gokarna Forest Resort",
-        "location": "Gokarna, Kathmandu",
-        "contact": "+977 1-4451212",
-        "numberOfRooms": 100,
-        "rates": 13000.00,
-        "rating": 4.7,
-        "image": "https://example.com/gokarna_resort.jpg"
-    },
-    {
-        "hotelName": "Hotel Annapurna",
-        "location": "Durbar Marg, Kathmandu",
-        "contact": "+977 1-4221711",
-        "numberOfRooms": 150,
-        "rates": 11000.00,
-        "rating": 4.4,
-        "image": "https://example.com/hotel_annapurna.jpg"
-    }
-]
-```
+### Update Hotel by ID
+**PATCH /api/hotels/update/{id}**
+
+Updates an existing hotel record by its ID.
+
+- **Path Parameter:**
+  - `id`: The ID of the hotel to be updated.
+- **Request Body:**
+  ```json
+  {
+      "hotelName": "Updated Hotel Name",
+      "location": "Updated Location",
+      "contact": "Updated Contact",
+      "numberOfRooms": 120,
+      "rates": 5500.00,
+      "rating": 4.2,
+      "image": "https://example.com/updated_hotel.jpg"
+  }
+  ```
+- **Response:**
+  - Status: `200 OK`
+  - Body: Updated hotel details.
+
+### Search for Hotels by Location
+**GET /api/hotels/search**
+
+Searches for hotels based on the location.
+
+- **Query Parameter:**
+  - `location`: The location to search for hotels.
+- **Response:**
+  - Status: `200 OK`
+  - Body: List of hotels in the specified location.
+
+### Search Hotel using Elastic Search
+**GET /api/hotels/search/el**
+
+Searches for hotels using Elastic Search.
+
+- **Query Parameter:**
+  - `query`: The search query.
+- **Response:**
+  - Status: `200 OK`
+  - Body: List of hotels matching the search query.
+
+### Retrieve All Hotels
+**GET /api/hotels/find**
+
+Retrieves all hotel records.
+
+- **Response:**
+  - Status: `200 OK`
+  - Body: List of all hotels.
+
+### Retrieve Hotel by ID
+**GET /api/hotels/find/{id}**
+
+Retrieves a hotel record by its ID.
+
+- **Path Parameter:**
+  - `id`: The ID of the hotel to be retrieved.
+- **Response:**
+  - Status: `200 OK`
+  - Body: Details of the specified hotel.
+
+### Delete Hotel by ID
+**DELETE /api/hotels/delete/{id}**
+
+Deletes a hotel record by its ID.
+
+- **Path Parameter:**
+  - `id`: The ID of the hotel to be deleted.
+- **Response:**
+  - Status: `204 No Content`
+
+### Delete All Hotels
+**DELETE /api/hotels/delete/all**
+
+Deletes all hotel records.
+
+- **Response:**
+  - Status: `204 No Content`
 
 ## Running the Application
 
@@ -123,7 +150,7 @@ Here is an example payload to create multiple hotel entries:
     cd Hotel-API-with-elastic-search
     ```
 
-3. Build and run the application:
+3. Build and run the application using Maven:
     ```bash
     mvn spring-boot:run
     ```
@@ -142,5 +169,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Thanks to the Swagger UI team for providing an easy-to-use interface for testing APIs.
 
 ---
-
-Feel free to customize this `README.md` further based on your specific needs and any additional features of your API.
