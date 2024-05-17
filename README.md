@@ -18,14 +18,14 @@ Creates a new hotel record.
 - **Request Body:**
   ```json
   {
-      "hotelName": "Example Hotel",
-      "location": "Example Location",
-      "contact": "+1234567890",
-      "numberOfRooms": 100,
-      "rates": 5000.00,
-      "rating": 4.0,
-      "image": "https://example.com/hotel.jpg"
-  }
+        "hotelName": "Hotel Annapurna",
+        "location": "Durbar Marg, Kathmandu",
+        "contact": "+977 1-4221711",
+        "numberOfRooms": 150,
+        "rates": 11000.00,
+        "rating": 4.4,
+        "image": "https://example.com/hotel_annapurna.jpg"
+    }
   ```
 - **Response:**
   - Status: `201 Created`
@@ -39,17 +39,97 @@ Creates multiple hotel records.
 - **Request Body:**
   ```json
   [
-      {
-          "hotelName": "Hotel Name",
-          "location": "Hotel Location",
-          "contact": "Hotel Contact",
-          "numberOfRooms": 100,
-          "rates": 5000.00,
-          "rating": 4.0,
-          "image": "https://example.com/hotel.jpg"
-      },
-      ...
-  ]
+    {
+        "hotelName": "Kathmandu Guest House",
+        "location": "Thamel, Kathmandu",
+        "contact": "+977 1-4700632",
+        "numberOfRooms": 145,
+        "rates": 3500.00,
+        "rating": 4.2,
+        "image": "https://example.com/kathmandu_guest_house.jpg"
+    },
+    {
+        "hotelName": "Hotel Shanker",
+        "location": "Lazimpat, Kathmandu",
+        "contact": "+977 1-4410151",
+        "numberOfRooms": 94,
+        "rates": 7500.00,
+        "rating": 4.5,
+        "image": "https://example.com/hotel_shanker.jpg"
+    },
+    {
+        "hotelName": "Hotel Himalaya",
+        "location": "Kumaripati, Lalitpur",
+        "contact": "+977 1-5523900",
+        "numberOfRooms": 125,
+        "rates": 6000.00,
+        "rating": 4.3,
+        "image": "https://example.com/hotel_himalaya.jpg"
+    },
+    {
+        "hotelName": "Hyatt Regency Kathmandu",
+        "location": "Taragaon, Kathmandu",
+        "contact": "+977 1-5171234",
+        "numberOfRooms": 280,
+        "rates": 15000.00,
+        "rating": 4.6,
+        "image": "https://example.com/hyatt_regency.jpg"
+    },
+    {
+        "hotelName": "Hotel Yak & Yeti",
+        "location": "Durbar Marg, Kathmandu",
+        "contact": "+977 1-4248999",
+        "numberOfRooms": 270,
+        "rates": 12000.00,
+        "rating": 4.4,
+        "image": "https://example.com/hotel_yak_yeti.jpg"
+    },
+    {
+        "hotelName": "Dwarika's Hotel",
+        "location": "Battisputali, Kathmandu",
+        "contact": "+977 1-4479488",
+        "numberOfRooms": 86,
+        "rates": 22000.00,
+        "rating": 4.8,
+        "image": "https://example.com/dwarikas_hotel.jpg"
+    },
+    {
+        "hotelName": "Radisson Hotel Kathmandu",
+        "location": "Lazimpat, Kathmandu",
+        "contact": "+977 1-4411818",
+        "numberOfRooms": 260,
+        "rates": 10000.00,
+        "rating": 4.5,
+        "image": "https://example.com/radisson_hotel.jpg"
+    },
+    {
+        "hotelName": "Hotel Everest",
+        "location": "New Baneshwor, Kathmandu",
+        "contact": "+977 1-4780100",
+        "numberOfRooms": 160,
+        "rates": 9000.00,
+        "rating": 4.3,
+        "image": "https://example.com/hotel_everest.jpg"
+    },
+    {
+        "hotelName": "Gokarna Forest Resort",
+        "location": "Gokarna, Kathmandu",
+        "contact": "+977 1-4451212",
+        "numberOfRooms": 100,
+        "rates": 13000.00,
+        "rating": 4.7,
+        "image": "https://example.com/gokarna_resort.jpg"
+    },
+    {
+        "hotelName": "Hotel Annapurna",
+        "location": "Durbar Marg, Kathmandu",
+        "contact": "+977 1-4221711",
+        "numberOfRooms": 150,
+        "rates": 11000.00,
+        "rating": 4.4,
+        "image": "https://example.com/hotel_annapurna.jpg"
+    }
+]
   ```
 - **Response:**
   - Status: `201 Created`
@@ -64,15 +144,15 @@ Updates an existing hotel record by its ID.
   - `id`: The ID of the hotel to be updated.
 - **Request Body:**
   ```json
-  {
-      "hotelName": "Updated Hotel Name",
-      "location": "Updated Location",
-      "contact": "Updated Contact",
-      "numberOfRooms": 120,
-      "rates": 5500.00,
-      "rating": 4.2,
-      "image": "https://example.com/updated_hotel.jpg"
-  }
+   {
+        "hotelName": "Hotel Yak & Yeti",
+        "location": "Durbar Marg, Kathmandu",
+        "contact": "+977 1-4248999",
+        "numberOfRooms": 270,
+        "rates": 12000.00,
+        "rating": 4.4,
+        "image": "https://example.com/hotel_yak_yeti.jpg"
+    }
   ```
 - **Response:**
   - Status: `200 OK`
