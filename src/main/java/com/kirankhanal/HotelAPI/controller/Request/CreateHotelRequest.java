@@ -24,5 +24,10 @@ public class CreateHotelRequest {
     @NotNull(message = "Rates cannot be empty")
     @Positive
     private BigDecimal rates;
-
+    @NotNull(message = "Rating cannot be empty")
+    @Min(1)
+    @Max(5)
+    private Float rating;
+    @NotEmpty(message = "Image cannot be empty")
+    private String image;
 }

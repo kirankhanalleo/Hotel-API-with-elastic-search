@@ -14,4 +14,6 @@ public class ViewHotelRequest {
     private String contact;
     private Integer NumberOfRooms;
     private BigDecimal rates;
+    private Float rating;
+    private String image;
 }

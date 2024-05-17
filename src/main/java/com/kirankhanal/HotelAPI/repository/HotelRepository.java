@@ -1,7 +1,7 @@
 package com.kirankhanal.HotelAPI.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.kirankhanal.HotelAPI.entities.Hotel;
+import com.kirankhanal.HotelAPI.entity.Hotel;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

@@ -3,7 +3,7 @@ package com.kirankhanal.HotelAPI.service.impl;
 import com.kirankhanal.HotelAPI.controller.Request.CreateHotelRequest;
 import com.kirankhanal.HotelAPI.controller.Request.ViewHotelRequest;
 import com.kirankhanal.HotelAPI.controller.Request.ViewOneHotelRequest;
-import com.kirankhanal.HotelAPI.entities.Hotel;
+import com.kirankhanal.HotelAPI.entity.Hotel;
 import com.kirankhanal.HotelAPI.service.HotelService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +27,8 @@ public class HotelServiceImpl implements HotelService {
         hotel.setLocation(createHotelRequest.getLocation());
         hotel.setNumberOfRooms(createHotelRequest.getNumberOfRooms());
         hotel.setRates(createHotelRequest.getRates());
+        hotel.setImage(createHotelRequest.getImage());
+        hotel.setRating(createHotelRequest.getRating());
         hotelrepository.save(hotel);
     }
 
@@ -39,6 +41,8 @@ public class HotelServiceImpl implements HotelService {
             hotel.setLocation(createHotelRequests.getLocation());
             hotel.setNumberOfRooms(createHotelRequests.getNumberOfRooms());
             hotel.setRates(createHotelRequests.getRates());
+            hotel.setRating(createHotelRequests.getRating());
+            hotel.setImage(createHotelRequests.getImage());
             hotelrepository.save(hotel);
         }
     }
@@ -51,6 +55,8 @@ public class HotelServiceImpl implements HotelService {
             viewHotelRequest.setContact(hotel.getContact());
             viewHotelRequest.setNumberOfRooms(hotel.getNumberOfRooms());
             viewHotelRequest.setRates(hotel.getRates());
+            viewHotelRequest.setRating(hotel.getRating());
+            viewHotelRequest.setImage(hotel.getImage());
             viewHotelRequests.add(viewHotelRequest);
         }
         return viewHotelRequests;
@@ -66,6 +72,8 @@ public class HotelServiceImpl implements HotelService {
             viewOneHotelRequest.setLocation((Hotel.getLocation()));
             viewOneHotelRequest.setNumberOfRooms(Hotel.getNumberOfRooms());
             viewOneHotelRequest.setRates(Hotel.getRates());
+            viewOneHotelRequest.setRating(Hotel.getRating());
+            viewOneHotelRequest.setImage(Hotel.getImage());
             return Optional.of(viewOneHotelRequest);
         }
         return Optional.empty();
@@ -94,6 +102,12 @@ public class HotelServiceImpl implements HotelService {
             }
             if (updatedHotel.getRates() != null) {
                 existingHotel.setRates(updatedHotel.getRates());
+            }
+            if(updatedHotel.getRating()!= null){
+                existingHotel.setRating(updatedHotel.getRating());
+            }
+            if(updatedHotel.getImage()!= null){
+                existingHotel.setImage(updatedHotel.getImage());
             }
             return hotelrepository.save(existingHotel);
         } else {

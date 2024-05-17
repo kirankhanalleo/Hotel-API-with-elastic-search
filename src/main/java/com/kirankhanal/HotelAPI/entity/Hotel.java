@@ -1,14 +1,11 @@
-package com.kirankhanal.HotelAPI.entities;
+package com.kirankhanal.HotelAPI.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.data.elasticsearch.annotations.Document;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Date;
 
 
 @Data
@@ -31,4 +28,8 @@ public class Hotel implements Serializable {
     private Integer numberOfRooms;
     @Column(name="rates")
     private BigDecimal rates;
+    @Column(name="rating")
+    private Float rating;
+    @Column(name="image")
+    private String image;
 }

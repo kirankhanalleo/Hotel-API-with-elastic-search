@@ -11,7 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.kirankhanal.HotelAPI.entities.Hotel;
+import com.kirankhanal.HotelAPI.entity.Hotel;
 import com.kirankhanal.HotelAPI.service.HotelService;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +35,10 @@ public class HotelController {
         hotelservice.createNewHotel(createHotelRequest);
         return ResponseEntity.status(HttpStatus.OK).body("Hotel created successfully.");
     }
+    @Operation(
+            summary = "Create multiple hotel",
+            description = "This endpoint adds multiple hotels to the database."
+    )
     @PostMapping("/create/multiple")
     public ResponseEntity<String> createNewHotels(@Valid @RequestBody List<CreateHotelRequest> createHotelRequest) {
         hotelservice.createNewHotels(createHotelRequest);
