@@ -1,4 +1,4 @@
-package com.kirankhanal.HotelAPI.controller.Request;
+package com.kirankhanal.HotelAPI.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
