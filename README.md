@@ -213,7 +213,7 @@ Searches for hotels based on the location.
 Searches for hotels using Elastic Search.
 
 - **Query Parameter:**
-  - `query`: The search query.
+  - `keyword`: The search keyword.
 - **Response:**
   - Status: `200 OK`
   - Body: List of hotels matching the search query.
