@@ -17,8 +17,9 @@ public class HotelSearchService {
         List<HotelModel> hotels = hotelRepositoryElastic.searchByKeyword(keyword)
                 .stream()
                 .filter(hotel -> hotel.getRating() != null)
-                .collect(Collectors.toList());;
-        hotels.sort(Comparator.comparing(HotelModel::getRating).reversed());
+                .collect(Collectors.toList());
+        hotels.sort(Comparator.comparing(HotelModel::getRating, Comparator.reverseOrder())
+                .thenComparing(HotelModel::getNumberOfRooms, Comparator.reverseOrder()));
         return hotels;
     }
 }
