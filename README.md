@@ -224,11 +224,11 @@ Deletes all hotel records.
     ```bash
     git clone https://github.com/kirankhanalleo/Hotel-API-with-elastic-search.git
     ```
-2. Create database hotel_api
+2. Create database hotel_api:
    ```bash
    create database hotel_api
    ```
-3. Create table hotel
+3. Create table hotel:
    ```bash
    create table hotel(
     hotel_id INT AUTO_INCREMENT PRIMARY KEY,
