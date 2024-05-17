@@ -8,6 +8,44 @@ To start using the API, navigate to the Swagger UI by opening the following URL 
 
 [Swagger UI](http://localhost:8080/swagger-ui/index.html#)
 
+## Running the Application
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/kirankhanalleo/Hotel-API-with-elastic-search.git
+    ```
+2. Create database hotel_api:
+   ```sql
+   create database hotel_api
+   ```
+3. Create table hotel:
+   ```sql
+   create table hotel(
+    hotel_id INT AUTO_INCREMENT PRIMARY KEY,
+    hotel_name VARCHAR(255),
+    location VARCHAR(255),
+    contact VARCHAR(255),
+    number_of_rooms VARCHAR(255),
+    rates DECIMAL,
+    rating FLOAT,
+    image VARCHAR(255)
+    )
+   ```
+4. Navigate to the project directory:
+    ```bash
+    cd Hotel-API-with-elastic-search
+    ```
+
+5. Build and run the application using Maven:
+    ```bash
+    mvn spring-boot:run
+    ```
+
+6. Open your browser and go to:
+    ```
+    http://localhost:8080/swagger-ui/index.html#
+    ```
+
 ## Endpoints
 
 ### Create a New Hotel
@@ -217,44 +255,6 @@ Deletes all hotel records.
 
 - **Response:**
   - Status: `204 No Content`
-
-## Running the Application
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/kirankhanalleo/Hotel-API-with-elastic-search.git
-    ```
-2. Create database hotel_api:
-   ```sql
-   create database hotel_api
-   ```
-3. Create table hotel:
-   ```sql
-   create table hotel(
-    hotel_id INT AUTO_INCREMENT PRIMARY KEY,
-    hotel_name VARCHAR(255),
-    location VARCHAR(255),
-    contact VARCHAR(255),
-    number_of_rooms VARCHAR(255),
-    rates DECIMAL,
-    rating FLOAT,
-    image VARCHAR(255)
-    )
-   ```
-4. Navigate to the project directory:
-    ```bash
-    cd Hotel-API-with-elastic-search
-    ```
-
-5. Build and run the application using Maven:
-    ```bash
-    mvn spring-boot:run
-    ```
-
-6. Open your browser and go to:
-    ```
-    http://localhost:8080/swagger-ui/index.html#
-    ```
 
 ## License
 
