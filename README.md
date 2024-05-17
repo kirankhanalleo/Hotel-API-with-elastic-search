@@ -129,7 +129,7 @@ Creates multiple hotel records.
         "rating": 4.4,
         "image": "https://example.com/hotel_annapurna.jpg"
     }
-]
+  ]
   ```
 - **Response:**
   - Status: `201 Created`
