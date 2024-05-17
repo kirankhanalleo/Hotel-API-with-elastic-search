@@ -224,18 +224,34 @@ Deletes all hotel records.
     ```bash
     git clone https://github.com/kirankhanalleo/Hotel-API-with-elastic-search.git
     ```
-
-2. Navigate to the project directory:
+2. Create database hotel_api
+   ```bash
+   create database hotel_api
+   ```
+3. Create table hotel
+   ```bash
+   create table hotel(
+    hotel_id INT AUTO_INCREMENT PRIMARY KEY,
+    hotel_name VARCHAR(255),
+    location VARCHAR(255),
+    contact VARCHAR(255),
+    number_of_rooms VARCHAR(255),
+    rates DECIMAL,
+    rating FLOAT,
+    image VARCHAR(255)
+    )
+   ```
+4. Navigate to the project directory:
     ```bash
     cd Hotel-API-with-elastic-search
     ```
 
-3. Build and run the application using Maven:
+5. Build and run the application using Maven:
     ```bash
     mvn spring-boot:run
     ```
 
-4. Open your browser and go to:
+6. Open your browser and go to:
     ```
     http://localhost:8080/swagger-ui/index.html#
     ```
