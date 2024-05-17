@@ -2,12 +2,6 @@
 
 This API allows you to manage hotel information, including creating, reading, updating, and deleting hotel data.
 
-## Getting Started
-
-To start using the API, navigate to the Swagger UI by opening the following URL in your browser:
-
-[Swagger UI](http://localhost:8080/swagger-ui/index.html#)
-
 ## Running the Application
 
 1. Clone the repository:
@@ -45,6 +39,11 @@ To start using the API, navigate to the Swagger UI by opening the following URL 
     ```
     http://localhost:8080/swagger-ui/index.html#
     ```
+## Getting Started
+
+To start using the API, navigate to the Swagger UI by opening the following URL in your browser:
+
+[Swagger UI](http://localhost:8080/swagger-ui/index.html#)
 
 ## Endpoints
 
