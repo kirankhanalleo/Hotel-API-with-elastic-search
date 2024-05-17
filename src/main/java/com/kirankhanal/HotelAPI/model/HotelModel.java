@@ -20,4 +20,6 @@ public class HotelModel {
     private String contact;
     private Integer numberOfRooms;
     private BigDecimal rates;
+    private Float rating;
+    private String image;
 }

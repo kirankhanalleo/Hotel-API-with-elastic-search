@@ -2,7 +2,7 @@ package com.kirankhanal.HotelAPI.service;
 import com.kirankhanal.HotelAPI.controller.Request.CreateHotelRequest;
 import com.kirankhanal.HotelAPI.controller.Request.ViewHotelRequest;
 import com.kirankhanal.HotelAPI.controller.Request.ViewOneHotelRequest;
-import com.kirankhanal.HotelAPI.entities.Hotel;
+import com.kirankhanal.HotelAPI.entity.Hotel;
 import jakarta.transaction.Transactional;
 
 import java.util.List;

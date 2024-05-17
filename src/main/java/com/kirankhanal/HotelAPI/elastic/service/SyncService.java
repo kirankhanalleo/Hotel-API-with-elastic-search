@@ -1,7 +1,7 @@
 package com.kirankhanal.HotelAPI.elastic.service;
 
 import com.kirankhanal.HotelAPI.elastic.repository.HotelRepositoryElastic;
-import com.kirankhanal.HotelAPI.entities.Hotel;
+import com.kirankhanal.HotelAPI.entity.Hotel;
 import com.kirankhanal.HotelAPI.model.HotelModel;
 import com.kirankhanal.HotelAPI.repository.HotelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,9 @@ public class SyncService {
                         hotel.getLocation(),
                         hotel.getContact(),
                         hotel.getNumberOfRooms(),
-                        hotel.getRates()
+                        hotel.getRates(),
+                        hotel.getRating(),
+                        hotel.getImage()
                 )).collect(Collectors.toList());
         hotelRepositoryElastic.saveAll(hotelModels);
     }
