@@ -35,10 +35,6 @@ This API allows you to manage hotel information, including creating, reading, up
     mvn spring-boot:run
     ```
 
-6. Open your browser and go to:
-    ```
-    http://localhost:8080/swagger-ui/index.html#
-    ```
 ## Getting Started
 
 To start using the API, navigate to the Swagger UI by opening the following URL in your browser:
